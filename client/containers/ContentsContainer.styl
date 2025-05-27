@@ -1,0 +1,136 @@
+@import '../../style/variables.styl'
+
+.ContentsContainer
+  position fixed
+  left 0
+  top 0
+  background-color #286176
+  background-image url(../../assets/darker-noise.png)
+  background-size 150px 150px
+  color #fff
+  z-index 999
+  transition all 0.5s
+  font-family 'Open Sans', Arial, sans-serif
+
+  .Controls
+    position relative
+    font-size 1rem
+    cursor pointer
+    padding-left menu-width
+
+    &:before 
+      content ""
+      position absolute
+      top 17px
+      left 17px
+      width 25px
+      height 4px
+      border-top 12px double #fff
+      border-bottom 4px solid #fff
+
+    &:hover
+      &:before
+        opacity .8
+
+  .logo
+    width 40px
+    height 40px
+    position fixed
+    bottom 10px
+    left 10px
+    background-image url(../../assets/logotype-white.svg)
+    background-size contain
+    background-repeat no-repeat
+    background-position center center
+    display none
+
+  &.closed
+
+    .logo
+      display block
+
+    .BuiltBy
+      pointer-events none
+
+  .Menu
+    padding 20px
+    width 22vw
+    height 84.5vh
+    overflow scroll
+    transition width 0.5s, margin 0.5s
+
+    li li
+      font-size 0.9rem
+      opacity .6
+      font-weight 100
+
+  .BuiltBy
+    text-align center
+    font-weight 100
+    font-size 0.9rem
+    width 100%
+    height 10vh
+    transition height 0.5s, margin 0.5s, opacity 0.1s
+    font-size 17px
+    padding-top 30px
+    background rgba(#fff, .05)
+
+    span, i
+      margin 2px
+
+    span
+      color: #fff
+
+    a, i
+      color lighten(color-workshape, 15)
+
+  &.closed
+
+    .Menu, 
+      overflow hidden
+      margin-left -600px
+
+    .BuiltBy
+      opacity 0
+      margin-left -600px
+  
+  @media screen and (max-width breakpoint-medium)
+
+    .logo
+      left auto
+      right 20px
+      bottom auto
+      top 10px
+      display block
+
+    &.closed .Controls
+      background #fff
+      box-shadow rgba(#000, .1) 0 2px 2px
+      width 100%
+      height menu-width
+
+      &:before
+        border-color rgba(color-code-bg, .8)
+
+    &.closed .logo
+      background-image url(../../assets/logotype-color.svg)
+
+    .Menu
+      width 100vw
+      transition height 0.5s, margin 0.5s, opacity 0.3s
+    
+    .BuiltBy 
+      width 100vw
+
+    &.closed 
+      .BuiltBy
+        opacity 0
+        height 0
+        margin-left 0
+      
+      .Menu
+        height 0
+        opacity 0
+        margin-left 0
+        margin-top -100px
+        width 100vw

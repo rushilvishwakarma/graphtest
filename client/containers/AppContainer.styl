@@ -1,0 +1,12 @@
+@import '../../style/variables.styl'
+
+.AppContainer
+  background-color #f5f5f5
+  transition padding 0.5s
+  overflow-x hidden
+  
+  &.pad-left
+    padding-left 20vw
+  @media screen and (max-width breakpoint-medium)
+    &.pad-left
+      padding-left 0vw

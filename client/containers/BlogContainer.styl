@@ -1,0 +1,68 @@
+@import '../../style/variables.styl'
+
+.BlogContainer
+  display block
+  max-width 900px
+  margin: 50px auto
+  font-family: 'Libre Baskerville', serif;
+  
+  h1,h2,h3,h4
+    display block
+    margin-top 40px
+    margin-bottom 40px
+  
+  p
+    display block
+    margin 40px 0
+    line-height 30px
+    color #666
+    font-size 18px
+    
+  .instruction
+    padding 15px 15px
+    border-radius 4px
+    text-align center
+    background-color lighten(color-code-bg, 50)
+    
+    h4
+      margin 10px
+      font-size 25px
+      color #333
+    
+    p
+      margin 10px
+    
+  ol, ul
+    margin 0 30px 30px
+    color #666
+    li 
+      margin-bottom 18px
+      line-height 2rem
+      a
+        color black
+        
+        &:hover
+          color lighten(black, 20)
+  
+  code
+    display block
+    border-radius 4px
+    // background-color lighten(color-light-grey, 5)
+    background-color color-code-bg
+    background-image url(../../assets/darker-noise.png)
+    background-size 150px 150px
+    color #fff
+    line-height 1.5rem
+    margin 20px
+    padding 20px
+          
+  @media screen and (max-width: breakpoint-large)
+    width 92vw
+  
+  @media screen and (max-width: breakpoint-small)
+    code
+      font-size 0.8rem
+  
+  @media screen and (max-width: breakpoint-tiny)
+    code
+      font-size 0.7rem
